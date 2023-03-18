@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unitTest version="1">
+    <file path="/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/Tests/Home.test.jsx">
+        <testCase name="Home component renders the title &quot;Quiz App&quot;" duration="3"/>
+        <testCase name="Home component contains a Play button" duration="0"/>
+    </file>
+</unitTest>
