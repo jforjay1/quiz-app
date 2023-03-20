@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <unitTest version="1">
+    <file path="/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/__tests__/Home.test.jsx">
+    </file>
     <file path="/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/__tests__/App.test.jsx">
-        <testCase name="&lt;App /&gt; renders the correct routes" duration="65"/>
+        <testCase name="&lt;App /&gt; renders the correct routes" duration="87"/>
     </file>
     <file path="/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/__tests__/QuizSummary.test.jsx">
-        <testCase name="&lt;QuizSummary /&gt; renders the title &quot;Quiz App&quot;" duration="4">
+        <testCase name="&lt;QuizSummary /&gt; renders the title &quot;Quiz App&quot;" duration="5">
             <failure message="Error: expect(received).toEqual(expected) // deep equality"><![CDATA[Error: expect(received).toEqual(expected) // deep equality
 
 Expected: true
@@ -28,14 +30,14 @@ Received: false
         <testCase name="&lt;QuizSummary /&gt; renders without crashing" duration="1"/>
         <testCase name="&lt;QuizSummary /&gt; displays no statistics available message when state is undefined" duration="3"/>
         <testCase name="&lt;QuizSummary /&gt; displays quiz summary when state is defined" duration="2"/>
-        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score of 0%" duration="1"/>
-        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 1% and 30%" duration="1"/>
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score of 0%" duration="2"/>
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 1% and 30%" duration="4"/>
         <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 31% and 50%" duration="2"/>
-        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 51% and 70%" duration="1"/>
-        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 71% and 84%" duration="0"/>
-        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score of 85% or higher" duration="1"/>
-        <testCase name="&lt;QuizSummary /&gt; displays Play Again and Back to Home buttons when state is defined" duration="2"/>
-        <testCase name="&lt;QuizSummary /&gt; redirects to Play Quiz page when Play Again button is clicked" duration="60">
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 51% and 70%" duration="2"/>
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 71% and 84%" duration="2"/>
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score of 85% or higher" duration="2"/>
+        <testCase name="&lt;QuizSummary /&gt; displays Play Again and Back to Home buttons when state is defined" duration="6"/>
+        <testCase name="&lt;QuizSummary /&gt; redirects to Play Quiz page when Play Again button is clicked" duration="67">
             <failure message="Error: expect(received).toEqual(expected) // deep equality"><![CDATA[Error: expect(received).toEqual(expected) // deep equality
 
 Expected: "http://localhost/play/quiz"
@@ -56,6 +58,6 @@ Received: "http://localhost/"
     at runTest (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-runner/build/runTest.js:475:34)
     at Object.worker (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-runner/build/testWorker.js:133:12)]]></failure>
         </testCase>
-        <testCase name="&lt;QuizSummary /&gt; redirects to Home page when Back to Home button is clicked" duration="7"/>
+        <testCase name="&lt;QuizSummary /&gt; redirects to Home page when Back to Home button is clicked" duration="8"/>
     </file>
 </unitTest>
