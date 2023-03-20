@@ -1,7 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <unitTest version="1">
-    <file path="/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/Tests/Home.test.jsx">
-        <testCase name="Home component renders the title &quot;Quiz App&quot;" duration="3"/>
-        <testCase name="Home component contains a Play button" duration="0"/>
+    <file path="/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/__tests__/App.test.jsx">
+        <testCase name="&lt;App /&gt; renders the correct routes" duration="65"/>
+    </file>
+    <file path="/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/__tests__/QuizSummary.test.jsx">
+        <testCase name="&lt;QuizSummary /&gt; renders the title &quot;Quiz App&quot;" duration="4">
+            <failure message="Error: expect(received).toEqual(expected) // deep equality"><![CDATA[Error: expect(received).toEqual(expected) // deep equality
+
+Expected: true
+Received: false
+    at Object.<anonymous> (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/__tests__/QuizSummary.test.jsx:25:45)
+    at Promise.then.completed (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/run.js:66:9)
+    at _runTestsForDescribeBlock (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/run.js:60:9)
+    at run (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/run.js:25:3)
+    at runAndTransformResultsToJestFormat (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+    at jestAdapter (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+    at runTestInternal (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-runner/build/runTest.js:475:34)
+    at Object.worker (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-runner/build/testWorker.js:133:12)]]></failure>
+        </testCase>
+        <testCase name="&lt;QuizSummary /&gt; renders without crashing" duration="1"/>
+        <testCase name="&lt;QuizSummary /&gt; displays no statistics available message when state is undefined" duration="3"/>
+        <testCase name="&lt;QuizSummary /&gt; displays quiz summary when state is defined" duration="2"/>
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score of 0%" duration="1"/>
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 1% and 30%" duration="1"/>
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 31% and 50%" duration="2"/>
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 51% and 70%" duration="1"/>
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score between 71% and 84%" duration="0"/>
+        <testCase name="&lt;QuizSummary /&gt; renders the correct remark for a score of 85% or higher" duration="1"/>
+        <testCase name="&lt;QuizSummary /&gt; displays Play Again and Back to Home buttons when state is defined" duration="2"/>
+        <testCase name="&lt;QuizSummary /&gt; redirects to Play Quiz page when Play Again button is clicked" duration="60">
+            <failure message="Error: expect(received).toEqual(expected) // deep equality"><![CDATA[Error: expect(received).toEqual(expected) // deep equality
+
+Expected: "http://localhost/play/quiz"
+Received: "http://localhost/"
+    at Object.<anonymous> (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/__tests__/QuizSummary.test.jsx:125:42)
+    at Promise.then.completed (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/run.js:66:9)
+    at _runTestsForDescribeBlock (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/run.js:60:9)
+    at run (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/run.js:25:3)
+    at runAndTransformResultsToJestFormat (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+    at jestAdapter (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+    at runTestInternal (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-runner/build/runTest.js:475:34)
+    at Object.worker (/Users/jaypatel/UNB/Winter 23/SS/quiz-app/node_modules/jest-runner/build/testWorker.js:133:12)]]></failure>
+        </testCase>
+        <testCase name="&lt;QuizSummary /&gt; redirects to Home page when Back to Home button is clicked" duration="7"/>
     </file>
 </unitTest>

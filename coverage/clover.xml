@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1679100034862" clover="3.2.0">
-  <project timestamp="1679100034862" name="All files">
-    <metrics statements="152" coveredstatements="24" conditionals="76" coveredconditionals="18" methods="46" coveredmethods="7" elements="274" coveredelements="49" complexity="0" loc="152" ncloc="152" packages="3" files="4" classes="4"/>
+<coverage generated="1679279478821" clover="3.2.0">
+  <project timestamp="1679279478821" name="All files">
+    <metrics statements="153" coveredstatements="25" conditionals="76" coveredconditionals="18" methods="46" coveredmethods="7" elements="275" coveredelements="50" complexity="0" loc="153" ncloc="153" packages="3" files="4" classes="4"/>
     <package name="src">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.js" path="/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/App.js">
@@ -10,10 +10,11 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Home.js" path="/Users/jaypatel/UNB/Winter 23/SS/quiz-app/src/components/Home.js">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="3" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.quiz">
@@ -157,22 +158,22 @@
         <line num="21" count="8" type="cond" truecount="2" falsecount="0"/>
         <line num="22" count="7" type="stmt"/>
         <line num="35" count="21" type="stmt"/>
-        <line num="38" count="21" type="stmt"/>
-        <line num="40" count="21" type="cond" truecount="2" falsecount="0"/>
-        <line num="41" count="10" type="stmt"/>
-        <line num="42" count="11" type="cond" truecount="4" falsecount="0"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="44" count="9" type="cond" truecount="4" falsecount="0"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="8" type="cond" truecount="4" falsecount="0"/>
-        <line num="47" count="1" type="stmt"/>
-        <line num="49" count="7" type="stmt"/>
-        <line num="52" count="21" type="cond" truecount="2" falsecount="0"/>
-        <line num="53" count="20" type="stmt"/>
-        <line num="93" count="1" type="stmt"/>
-        <line num="94" count="1" type="stmt"/>
-        <line num="100" count="1" type="stmt"/>
-        <line num="114" count="21" type="stmt"/>
+        <line num="37" count="21" type="stmt"/>
+        <line num="39" count="21" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="10" type="stmt"/>
+        <line num="41" count="11" type="cond" truecount="4" falsecount="0"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="9" type="cond" truecount="4" falsecount="0"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="48" count="7" type="stmt"/>
+        <line num="51" count="21" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="20" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="102" count="21" type="stmt"/>
       </file>
     </package>
   </project>

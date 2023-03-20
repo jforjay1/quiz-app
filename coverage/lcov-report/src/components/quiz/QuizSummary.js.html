@@ -175,20 +175,7 @@
 <a name='L110'></a><a href='#L110'>110</a>
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a>
-<a name='L118'></a><a href='#L118'>118</a>
-<a name='L119'></a><a href='#L119'>119</a>
-<a name='L120'></a><a href='#L120'>120</a>
-<a name='L121'></a><a href='#L121'>121</a>
-<a name='L122'></a><a href='#L122'>122</a>
-<a name='L123'></a><a href='#L123'>123</a>
-<a name='L124'></a><a href='#L124'>124</a>
-<a name='L125'></a><a href='#L125'>125</a>
-<a name='L126'></a><a href='#L126'>126</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,7 +210,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -269,17 +255,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -312,140 +287,126 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 &nbsp;
 class QuizSummary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      score: 0,
-      numberOfQuestions: 0,
-      numberOfAnsweredQuestions: 0,
-      correctAnswers: 0,
-      wrongAnswers: 0,
-      hintsUsed: 0,
-      fiftyFiftyUsed: 0,
-    };
-  }
-&nbsp;
-  componentDidMount() {
-    const { state } = this.props.location;
-    if (state) {
-      this.setState({
-        score: (state.score / state.numberOfQuestions) * 100,
-        numberOfQuestions: state.numberOfQuestions,
-        numberOfAnsweredQuestions: state.numberOfAnsweredQuestions,
-        correctAnswers: state.correctAnswers,
-        wrongAnswers: state.wrongAnswers,
-        hintsUsed: state.hintsUsed,
-        fiftyFiftyUsed: state.fiftyFiftyUsed,
-      });
-    }
-  }
-&nbsp;
-  render() {
-    const { state } = this.props.location;
-    let stats; let
-      remark;
-    const userScore = this.state.score;
-&nbsp;
-    if (userScore &lt;= 30) {
-      remark = 'You need more practice!';
-    } else if (userScore &gt; 30 &amp;&amp; userScore &lt;= 50) {
-      remark = 'Better luck next time!';
-    } else if (userScore &lt;= 70 &amp;&amp; userScore &gt; 50) {
-      remark = 'You can do better!';
-    } else if (userScore &gt;= 71 &amp;&amp; userScore &lt;= 84) {
-      remark = 'You did great!';
-    } else {
-      remark = 'You\'re an absolute genius!';
+    constructor(props) {
+        super(props);
+        this.state = {
+            score: 0,
+            numberOfQuestions: 0,
+            numberOfAnsweredQuestions: 0,
+            correctAnswers: 0,
+            wrongAnswers: 0,
+            hintsUsed: 0,
+            fiftyFiftyUsed: 0
+        };
     }
 &nbsp;
-    if (state !== undefined) {
-      stats = (
-        &lt;&gt;
-          &lt;div style={{ textAlign: 'center' }}&gt;
-            &lt;span className="mdi mdi-check-circle-outline success-icon" /&gt;
-          &lt;/div&gt;
-          &lt;h1&gt;Quiz has ended&lt;/h1&gt;
-          &lt;div className="container stats"&gt;
-            &lt;h4&gt;{remark}&lt;/h4&gt;
-            &lt;h2&gt;
-              Your Score:
-              {' '}
-              {this.state.score.toFixed(0)}
-              &amp;#37;
-            &lt;/h2&gt;
-            &lt;span className="stat left"&gt;Total number of questions: &lt;/span&gt;
-            &lt;span className="right"&gt;{this.state.numberOfQuestions}&lt;/span&gt;
-            &lt;br /&gt;
-&nbsp;
-            &lt;span className="stat left"&gt;Number of attempted questions: &lt;/span&gt;
-            &lt;span className="right"&gt;{this.state.numberOfAnsweredQuestions}&lt;/span&gt;
-            &lt;br /&gt;
-&nbsp;
-            &lt;span className="stat left"&gt;Number of Correct Answers: &lt;/span&gt;
-            &lt;span className="right"&gt;{this.state.correctAnswers}&lt;/span&gt;
-            {' '}
-            &lt;br /&gt;
-&nbsp;
-            &lt;span className="stat left"&gt;Number of Wrong Answers: &lt;/span&gt;
-            &lt;span className="right"&gt;{this.state.wrongAnswers}&lt;/span&gt;
-            &lt;br /&gt;
-&nbsp;
-            &lt;span className="stat left"&gt;Hints Used: &lt;/span&gt;
-            &lt;span className="right"&gt;{this.state.hintsUsed}&lt;/span&gt;
-            &lt;br /&gt;
-&nbsp;
-            &lt;span className="stat left"&gt;50-50 Used: &lt;/span&gt;
-            &lt;span className="right"&gt;{this.state.fiftyFiftyUsed}&lt;/span&gt;
-          &lt;/div&gt;
-          &lt;section&gt;
-            &lt;div className="button-container"&gt;
-              &lt;button onClick={() =&gt; window.location.href = '/play/quiz'}&gt;Play Again&lt;/button&gt;
-              &lt;button onClick={() =&gt; window.location.href = '/'}&gt;Back to Home&lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/section&gt;
-        &lt;/&gt;
-      );
-    } else {
-      stats = (
-        &lt;section&gt;
-          &lt;h1 className="no-stats"&gt;No Statistics Available&lt;/h1&gt;
-          &lt;ul&gt;
-            &lt;li&gt;
-              &lt;Link to="/play/quiz"&gt;Take a Quiz&lt;/Link&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;Link to="/"&gt;Back to Home&lt;/Link&gt;
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/section&gt;
-      );
+    componentDidMount() {
+        const { state } = this.props.location;
+        if (state) {
+            this.setState({
+                score: (state.score / state.numberOfQuestions) * 100,
+                numberOfQuestions: state.numberOfQuestions,
+                numberOfAnsweredQuestions: state.numberOfAnsweredQuestions,
+                correctAnswers: state.correctAnswers,
+                wrongAnswers: state.wrongAnswers,
+                hintsUsed: state.hintsUsed,
+                fiftyFiftyUsed: state.fiftyFiftyUsed
+            });
+        }
     }
-    return (
-      &lt;&gt;
-        &lt;Helmet&gt;&lt;title&gt;Summary&lt;/title&gt;&lt;/Helmet&gt;
-        &lt;div className="quiz-summary"&gt;
-          {stats}
-        &lt;/div&gt;
-      &lt;/&gt;
-    );
-  }
+&nbsp;
+    render() {
+        const { state } = this.props.location;
+        let stats, remark;
+        const userScore = this.state.score;
+&nbsp;
+        if (userScore &lt;= 30) {
+            remark = 'You need more practice!';
+        } else if (userScore &gt; 30 &amp;&amp; userScore &lt;= 50) {
+            remark = 'Better luck next time!';
+        } else if (userScore &lt;= 70 &amp;&amp; userScore &gt; 50) {
+            remark = 'You can do better!';
+        } else if (userScore &gt;= 71 &amp;&amp; userScore &lt;= 84) {
+            remark = 'You did great!';
+        } else {
+            remark = 'You\'re an absolute genius!';
+        }
+&nbsp;
+        if (state !== undefined) {
+            stats = (
+                &lt;Fragment&gt;
+                    &lt;div style={{ textAlign: 'center' }}&gt;
+                        &lt;span className="mdi mdi-check-circle-outline success-icon"&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;h1&gt;Quiz has ended&lt;/h1&gt;
+                    &lt;div className="container stats"&gt;
+                        &lt;h4&gt;{remark}&lt;/h4&gt;
+                        &lt;h2&gt;Your Score: {this.state.score.toFixed(0)}&amp;#37;&lt;/h2&gt;
+                        &lt;span className="stat left"&gt;Total number of questions: &lt;/span&gt;
+                        &lt;span className="right"&gt;{this.state.numberOfQuestions}&lt;/span&gt;&lt;br /&gt;
+&nbsp;
+                        &lt;span className="stat left"&gt;Number of attempted questions: &lt;/span&gt;
+                        &lt;span className="right"&gt;{this.state.numberOfAnsweredQuestions}&lt;/span&gt;&lt;br /&gt;
+&nbsp;
+                        &lt;span className="stat left"&gt;Number of Correct Answers: &lt;/span&gt;
+                        &lt;span className="right"&gt;{this.state.correctAnswers}&lt;/span&gt; &lt;br /&gt;
+&nbsp;
+                        &lt;span className="stat left"&gt;Number of Wrong Answers: &lt;/span&gt;
+                        &lt;span className="right"&gt;{this.state.wrongAnswers}&lt;/span&gt;&lt;br /&gt;
+&nbsp;
+                        &lt;span className="stat left"&gt;Hints Used: &lt;/span&gt;
+                        &lt;span className="right"&gt;{this.state.hintsUsed}&lt;/span&gt;&lt;br /&gt;
+&nbsp;
+                        &lt;span className="stat left"&gt;50-50 Used: &lt;/span&gt;
+                        &lt;span className="right"&gt;{this.state.fiftyFiftyUsed}&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;section&gt;
+                        &lt;div className="button-container"&gt;
+                            &lt;button onClick={() =&gt; window.location.href = "/play/quiz"}&gt;Play Again&lt;/button&gt;
+                            &lt;button onClick={() =&gt; window.location.href = "/"}&gt;Back to Home&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/section&gt;
+                &lt;/Fragment&gt;
+            );
+        } else {
+            stats = (
+                &lt;section&gt;
+                    &lt;h1 className="no-stats"&gt;No Statistics Available&lt;/h1&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;Link to="/play/quiz"&gt;Take a Quiz&lt;/Link&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;Link to="/"&gt;Back to Home&lt;/Link&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/section&gt;
+            );
+        }
+        return (
+            &lt;Fragment&gt;
+                &lt;Helmet&gt;&lt;title&gt;Summary&lt;/title&gt;&lt;/Helmet&gt;
+                &lt;div className="quiz-summary"&gt;
+                    {stats}
+                &lt;/div&gt;
+            &lt;/Fragment&gt;
+        );
+    }
 }
 &nbsp;
-export default QuizSummary;
-&nbsp;</pre></td></tr></table></pre>
+export default QuizSummary;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-18T00:40:34.849Z
+                at 2023-03-20T02:31:18.809Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
