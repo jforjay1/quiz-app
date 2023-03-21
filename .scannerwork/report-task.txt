@@ -2,5 +2,5 @@ projectKey=quiz-app
 serverUrl=http://localhost:9000
 serverVersion=9.9.0.65466
 dashboardUrl=http://localhost:9000/dashboard?id=quiz-app
-ceTaskId=AYcEGIdO1giyyZLviFZf
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYcEGIdO1giyyZLviFZf
+ceTaskId=AYcEVOrg1giyyZLviFZn
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYcEVOrg1giyyZLviFZn

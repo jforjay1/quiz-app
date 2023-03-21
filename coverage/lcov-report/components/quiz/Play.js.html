@@ -841,8 +841,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component, Fragment } from 'react';
-import { Helmet } from 'react-helmet';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, {Component, Fragment} from 'react';
+import {Helmet} from 'react-helmet';
 import M from 'materialize-css';
 import classnames from 'classnames';
 &nbsp;
@@ -850,384 +850,384 @@ import questions from '../../questions.json';
 import isEmpty from '../../utils/is-empty';
 &nbsp;
 class Play extends Component {
-<span class="fstat-no" title="function not covered" >    co</span>nstructor (props) {
-<span class="cstat-no" title="statement not covered" >        super(props);</span>
-<span class="cstat-no" title="statement not covered" >        this.state = {</span>
-            questions,
-            currentQuestion: {},
-            nextQuestion: {},
-            previousQuestion: {},
-            answer: '',
-            numberOfQuestions: 0,
-            numberOfAnsweredQuestions: 0,
-            currentQuestionIndex: 0,
-            score: 0,
-            correctAnswers: 0,
-            wrongAnswers: 0,
-            hints: 5,
-            fiftyFifty: 2,
-            usedFiftyFifty: false,
-            nextButtonDisabled: false,
-            previousButtonDisabled: true,
-            previousRandomNumbers: [],
-            time: {}
-        };
-<span class="cstat-no" title="statement not covered" >        this.interval = null;</span>
-    }
+<span class="fstat-no" title="function not covered" >	co</span>nstructor (props) {
+<span class="cstat-no" title="statement not covered" >		super(props);</span>
+<span class="cstat-no" title="statement not covered" >		this.state = {</span>
+			questions,
+			currentQuestion: {},
+			nextQuestion: {},
+			previousQuestion: {},
+			answer: '',
+			numberOfQuestions: 0,
+			numberOfAnsweredQuestions: 0,
+			currentQuestionIndex: 0,
+			score: 0,
+			correctAnswers: 0,
+			wrongAnswers: 0,
+			hints: 5,
+			fiftyFifty: 2,
+			usedFiftyFifty: false,
+			nextButtonDisabled: false,
+			previousButtonDisabled: true,
+			previousRandomNumbers: [],
+			time: {}
+		};
+<span class="cstat-no" title="statement not covered" >		this.interval = null;</span>
+	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >    co</span>mponentDidMount () {
-        const { questions, currentQuestion, nextQuestion, previousQuestion } = <span class="cstat-no" title="statement not covered" >this.state;</span>
-<span class="cstat-no" title="statement not covered" >        this.displayQuestions(questions, currentQuestion, nextQuestion, previousQuestion);</span>
-<span class="cstat-no" title="statement not covered" >        this.startTimer();</span>
-    }
+<span class="fstat-no" title="function not covered" >	co</span>mponentDidMount () {
+		const { questions, currentQuestion, nextQuestion, previousQuestion } = <span class="cstat-no" title="statement not covered" >this.state;</span>
+<span class="cstat-no" title="statement not covered" >		this.displayQuestions(questions, currentQuestion, nextQuestion, previousQuestion);</span>
+<span class="cstat-no" title="statement not covered" >		this.startTimer();</span>
+	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >    co</span>mponentWillUnmount () {
-<span class="cstat-no" title="statement not covered" >        clearInterval(this.interval);</span>
-    }
+<span class="fstat-no" title="function not covered" >	co</span>mponentWillUnmount () {
+<span class="cstat-no" title="statement not covered" >		clearInterval(this.interval);</span>
+	}
 &nbsp;
-    displayQuestions = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(q</span>uestions = <span class="branch-0 cbranch-no" title="branch not covered" >this.state.questions,</span> currentQuestion, nextQuestion, previousQuestion) =&gt; {</span>
-        let { currentQuestionIndex } = <span class="cstat-no" title="statement not covered" >this.state;   </span>
-<span class="cstat-no" title="statement not covered" >        if (!isEmpty(this.state.questions)) {</span>
-<span class="cstat-no" title="statement not covered" >            questions = this.state.questions;</span>
-<span class="cstat-no" title="statement not covered" >            currentQuestion = questions[currentQuestionIndex];</span>
-<span class="cstat-no" title="statement not covered" >            nextQuestion = questions[currentQuestionIndex + 1];</span>
-<span class="cstat-no" title="statement not covered" >            previousQuestion = questions[currentQuestionIndex - 1];</span>
-            const answer = <span class="cstat-no" title="statement not covered" >currentQuestion.answer;</span>
-<span class="cstat-no" title="statement not covered" >            this.setState({</span>
-                currentQuestion,
-                nextQuestion,
-                previousQuestion,
-                numberOfQuestions: questions.length,
-                answer,
-                previousRandomNumbers: []
-            }, <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >                this.showOptions();</span>
-<span class="cstat-no" title="statement not covered" >                this.handleDisableButton();</span>
-            });
-        }     
-    };
+	displayQuestions = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(q</span>uestions = <span class="branch-0 cbranch-no" title="branch not covered" >this.state.questions,</span> currentQuestion, nextQuestion, previousQuestion) =&gt; {</span>
+		let { currentQuestionIndex } = <span class="cstat-no" title="statement not covered" >this.state;</span>
+<span class="cstat-no" title="statement not covered" >		if (!isEmpty(this.state.questions)) {</span>
+<span class="cstat-no" title="statement not covered" >			questions = this.state.questions;</span>
+<span class="cstat-no" title="statement not covered" >			currentQuestion = questions[currentQuestionIndex];</span>
+<span class="cstat-no" title="statement not covered" >			nextQuestion = questions[currentQuestionIndex + 1];</span>
+<span class="cstat-no" title="statement not covered" >			previousQuestion = questions[currentQuestionIndex - 1];</span>
+			const answer = <span class="cstat-no" title="statement not covered" >currentQuestion.answer;</span>
+<span class="cstat-no" title="statement not covered" >			this.setState({</span>
+				currentQuestion,
+				nextQuestion,
+				previousQuestion,
+				numberOfQuestions: questions.length,
+				answer,
+				previousRandomNumbers: []
+			}, <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >				this.showOptions();</span>
+<span class="cstat-no" title="statement not covered" >				this.handleDisableButton();</span>
+			});
+		}
+	};
 &nbsp;
-    handleOptionClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (e.target.innerHTML.toLowerCase() === this.state.answer.toLowerCase()) {</span>
-<span class="cstat-no" title="statement not covered" >            this.correctTimeout = setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                this.correctSound.current.play();</span>
-            }, 500);
-<span class="cstat-no" title="statement not covered" >            this.correctAnswer();</span>
-        } else {
-<span class="cstat-no" title="statement not covered" >            this.wrongTimeout = setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                this.wrongSound.current.play();</span>
-            }, 500);
-<span class="cstat-no" title="statement not covered" >            this.wrongAnswer();</span>
-        }
-    }
+	handleOptionClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if (e.target.innerHTML.toLowerCase() === this.state.answer.toLowerCase()) {</span>
+<span class="cstat-no" title="statement not covered" >			this.correctTimeout = setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				this.correctSound.current.play();</span>
+			}, 500);
+<span class="cstat-no" title="statement not covered" >			this.correctAnswer();</span>
+		} else {
+<span class="cstat-no" title="statement not covered" >			this.wrongTimeout = setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				this.wrongSound.current.play();</span>
+			}, 500);
+<span class="cstat-no" title="statement not covered" >			this.wrongAnswer();</span>
+		}
+	};
 &nbsp;
-    handleNextButtonClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.state.nextQuestion !== undefined) {</span>
-<span class="cstat-no" title="statement not covered" >            this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
-                currentQuestionIndex: prevState.currentQuestionIndex + 1
-            }), <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >                this.displayQuestions(this.state.state, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);</span>
-            });
-        }
-    };
+	handleNextButtonClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if (this.state.nextQuestion !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >			this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+				currentQuestionIndex: prevState.currentQuestionIndex + 1
+			}), <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >				this.displayQuestions(this.state.state, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);</span>
+			});
+		}
+	};
 &nbsp;
-    handlePreviousButtonClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.state.previousQuestion !== undefined) {</span>
-<span class="cstat-no" title="statement not covered" >            this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
-                currentQuestionIndex: prevState.currentQuestionIndex - 1
-            }), <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >                this.displayQuestions(this.state.state, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);</span>
-            });
-        }
-    };
+	handlePreviousButtonClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if (this.state.previousQuestion !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >			this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+				currentQuestionIndex: prevState.currentQuestionIndex - 1
+			}), <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >				this.displayQuestions(this.state.state, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);</span>
+			});
+		}
+	};
 &nbsp;
-    handleQuitButtonClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+	handleQuitButtonClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            this.props.history.push('/');</span>
-    };
+<span class="cstat-no" title="statement not covered" >		this.props.history.push('/');</span>
+	};
 &nbsp;
-    handleButtonClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        switch (e.target.id) {</span>
-            case 'next-button':
-<span class="cstat-no" title="statement not covered" >                this.handleNextButtonClick();</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
+	handleButtonClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		switch (e.target.id) {</span>
+		case 'next-button':
+<span class="cstat-no" title="statement not covered" >			this.handleNextButtonClick();</span>
+<span class="cstat-no" title="statement not covered" >			break;</span>
 &nbsp;
-            case 'previous-button':
-<span class="cstat-no" title="statement not covered" >                this.handlePreviousButtonClick();</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
+		case 'previous-button':
+<span class="cstat-no" title="statement not covered" >			this.handlePreviousButtonClick();</span>
+<span class="cstat-no" title="statement not covered" >			break;</span>
 &nbsp;
-            case 'quit-button':
-<span class="cstat-no" title="statement not covered" >                this.handleQuitButtonClick();</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
+		case 'quit-button':
+<span class="cstat-no" title="statement not covered" >			this.handleQuitButtonClick();</span>
+<span class="cstat-no" title="statement not covered" >			break;</span>
 &nbsp;
-            default:
-<span class="cstat-no" title="statement not covered" >                break;</span>
-        }
-        
-    };
+		default:
+<span class="cstat-no" title="statement not covered" >			break;</span>
+		}
 &nbsp;
-    correctAnswer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        M.toast({</span>
-            html: 'Correct Answer!',
-            classes: 'toast-valid',
-            displayLength: 1500
-        });
-<span class="cstat-no" title="statement not covered" >        this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
-            score: prevState.score + 1,
-            correctAnswers: prevState.correctAnswers + 1,
-            currentQuestionIndex: prevState.currentQuestionIndex + 1,
-            numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1
-        }), <span class="fstat-no" title="function not covered" >()</span> =&gt; {            
-<span class="cstat-no" title="statement not covered" >            if (this.state.nextQuestion === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >                this.endGame();</span>
-            } else {
-<span class="cstat-no" title="statement not covered" >                this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);</span>
-            }
-        });
-    }
+	};
 &nbsp;
-    wrongAnswer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        navigator.vibrate(1000);</span>
-<span class="cstat-no" title="statement not covered" >        M.toast({</span>
-            html: 'Wrong Answer!',
-            classes: 'toast-invalid',
-            displayLength: 1500
-        });
-<span class="cstat-no" title="statement not covered" >        this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
-            wrongAnswers: prevState.wrongAnswers + 1,
-            currentQuestionIndex: prevState.currentQuestionIndex + 1,
-            numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1
-        }), <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >            if (this.state.nextQuestion === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >                this.endGame();</span>
-            } else {
-<span class="cstat-no" title="statement not covered" >                this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);</span>
-            }
-        });
-    }
+	correctAnswer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		M.toast({</span>
+			html: 'Correct Answer!',
+			classes: 'toast-valid',
+			displayLength: 1500
+		});
+<span class="cstat-no" title="statement not covered" >		this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+			score: prevState.score + 1,
+			correctAnswers: prevState.correctAnswers + 1,
+			currentQuestionIndex: prevState.currentQuestionIndex + 1,
+			numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1
+		}), <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >			if (this.state.nextQuestion === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >				this.endGame();</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);</span>
+			}
+		});
+	};
 &nbsp;
-    showOptions = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-        const options = <span class="cstat-no" title="statement not covered" >Array.from(document.querySelectorAll('.option'));</span>
+	wrongAnswer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		navigator.vibrate(1000);</span>
+<span class="cstat-no" title="statement not covered" >		M.toast({</span>
+			html: 'Wrong Answer!',
+			classes: 'toast-invalid',
+			displayLength: 1500
+		});
+<span class="cstat-no" title="statement not covered" >		this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+			wrongAnswers: prevState.wrongAnswers + 1,
+			currentQuestionIndex: prevState.currentQuestionIndex + 1,
+			numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1
+		}), <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >			if (this.state.nextQuestion === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >				this.endGame();</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);</span>
+			}
+		});
+	};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        options.forEach(<span class="fstat-no" title="function not covered" >op</span>tion =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            option.style.visibility = 'visible';</span>
-        });
+	showOptions = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+		const options = <span class="cstat-no" title="statement not covered" >Array.from(document.querySelectorAll('.option'));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        this.setState({</span>
-            usedFiftyFifty: false
-        });
-    }
+<span class="cstat-no" title="statement not covered" >		options.forEach(<span class="fstat-no" title="function not covered" >op</span>tion =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >			option.style.visibility = 'visible';</span>
+		});
 &nbsp;
-    handleHints = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.state.hints &gt; 0) {</span>
-            const options = <span class="cstat-no" title="statement not covered" >Array.from(document.querySelectorAll('.option'));</span>
-            let indexOfAnswer;
+<span class="cstat-no" title="statement not covered" >		this.setState({</span>
+			usedFiftyFifty: false
+		});
+	};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            options.forEach(<span class="fstat-no" title="function not covered" >(o</span>ption, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                if (option.innerHTML.toLowerCase() === this.state.answer.toLowerCase()) {</span>
-<span class="cstat-no" title="statement not covered" >                    indexOfAnswer = index;</span>
-                }
-            });
+	handleHints = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if (this.state.hints &gt; 0) {</span>
+			const options = <span class="cstat-no" title="statement not covered" >Array.from(document.querySelectorAll('.option'));</span>
+			let indexOfAnswer;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            while (true) {</span>
-                const randomNumber = <span class="cstat-no" title="statement not covered" >Math.round(Math.random() * 3);</span>
-<span class="cstat-no" title="statement not covered" >                if (randomNumber !== indexOfAnswer &amp;&amp; !this.state.previousRandomNumbers.includes(randomNumber)) {</span>
-<span class="cstat-no" title="statement not covered" >                    options.forEach(<span class="fstat-no" title="function not covered" >(o</span>ption, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        if (index === randomNumber) {</span>
-<span class="cstat-no" title="statement not covered" >                            option.style.visibility = 'hidden';</span>
-<span class="cstat-no" title="statement not covered" >                            this.setState(<span class="fstat-no" title="function not covered" >(p</span>revState) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
-                                hints: prevState.hints - 1,
-                                previousRandomNumbers: prevState.previousRandomNumbers.concat(randomNumber)
-                            }));
-                        }
-                    });
-<span class="cstat-no" title="statement not covered" >                    break;</span>
-                }
-<span class="cstat-no" title="statement not covered" >                if (this.state.previousRandomNumbers.length &gt;= 3) <span class="cstat-no" title="statement not covered" >break;</span></span>
-            }
-        }
-    }
+<span class="cstat-no" title="statement not covered" >			options.forEach(<span class="fstat-no" title="function not covered" >(o</span>ption, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				if (option.innerHTML.toLowerCase() === this.state.answer.toLowerCase()) {</span>
+<span class="cstat-no" title="statement not covered" >					indexOfAnswer = index;</span>
+				}
+			});
 &nbsp;
-    handleFiftyFifty = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.state.fiftyFifty &gt; 0 &amp;&amp; this.state.usedFiftyFifty === false) {</span>
-            const options = <span class="cstat-no" title="statement not covered" >document.querySelectorAll('.option');</span>
-            const randomNumbers = <span class="cstat-no" title="statement not covered" >[];</span>
-            let indexOfAnswer;
+<span class="cstat-no" title="statement not covered" >			while (true) {</span>
+				const randomNumber = <span class="cstat-no" title="statement not covered" >Math.round(Math.random() * 3);</span>
+<span class="cstat-no" title="statement not covered" >				if (randomNumber !== indexOfAnswer &amp;&amp; !this.state.previousRandomNumbers.includes(randomNumber)) {</span>
+<span class="cstat-no" title="statement not covered" >					options.forEach(<span class="fstat-no" title="function not covered" >(o</span>ption, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >						if (index === randomNumber) {</span>
+<span class="cstat-no" title="statement not covered" >							option.style.visibility = 'hidden';</span>
+<span class="cstat-no" title="statement not covered" >							this.setState(<span class="fstat-no" title="function not covered" >(p</span>revState) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+								hints: prevState.hints - 1,
+								previousRandomNumbers: prevState.previousRandomNumbers.concat(randomNumber)
+							}));
+						}
+					});
+<span class="cstat-no" title="statement not covered" >					break;</span>
+				}
+<span class="cstat-no" title="statement not covered" >				if (this.state.previousRandomNumbers.length &gt;= 3) <span class="cstat-no" title="statement not covered" >break;</span></span>
+			}
+		}
+	};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            options.forEach(<span class="fstat-no" title="function not covered" >(o</span>ption, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                if (option.innerHTML.toLowerCase() === this.state.answer.toLowerCase()) {</span>
-<span class="cstat-no" title="statement not covered" >                    indexOfAnswer = index;</span>
-                }
-            });
+	handleFiftyFifty = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if (this.state.fiftyFifty &gt; 0 &amp;&amp; this.state.usedFiftyFifty === false) {</span>
+			const options = <span class="cstat-no" title="statement not covered" >document.querySelectorAll('.option');</span>
+			const randomNumbers = <span class="cstat-no" title="statement not covered" >[];</span>
+			let indexOfAnswer;
 &nbsp;
-            let count = <span class="cstat-no" title="statement not covered" >0;</span>
-<span class="cstat-no" title="statement not covered" >            do {</span>
-                const randomNumber = <span class="cstat-no" title="statement not covered" >Math.round(Math.random() * 3);</span>
-<span class="cstat-no" title="statement not covered" >                if (randomNumber !== indexOfAnswer) {</span>
-<span class="cstat-no" title="statement not covered" >                    if (randomNumbers.length &lt; 2 &amp;&amp; !randomNumbers.includes(randomNumber) &amp;&amp; !randomNumbers.includes(indexOfAnswer)) {</span>
-<span class="cstat-no" title="statement not covered" >                            randomNumbers.push(randomNumber);</span>
-<span class="cstat-no" title="statement not covered" >                            count ++;</span>
-                    } else {
-<span class="cstat-no" title="statement not covered" >                        while (true) {</span>
-                            const newRandomNumber = <span class="cstat-no" title="statement not covered" >Math.round(Math.random() * 3);</span>
-<span class="cstat-no" title="statement not covered" >                            if (!randomNumbers.includes(newRandomNumber) &amp;&amp; newRandomNumber !== indexOfAnswer) {</span>
-<span class="cstat-no" title="statement not covered" >                                randomNumbers.push(newRandomNumber);</span>
-<span class="cstat-no" title="statement not covered" >                                count ++;</span>
-<span class="cstat-no" title="statement not covered" >                                break;</span>
-                            }
-                        }
-                    }
-                }
-            } while (count &lt; 2);
+<span class="cstat-no" title="statement not covered" >			options.forEach(<span class="fstat-no" title="function not covered" >(o</span>ption, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				if (option.innerHTML.toLowerCase() === this.state.answer.toLowerCase()) {</span>
+<span class="cstat-no" title="statement not covered" >					indexOfAnswer = index;</span>
+				}
+			});
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            options.forEach(<span class="fstat-no" title="function not covered" >(o</span>ption, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                if (randomNumbers.includes(index)) {</span>
-<span class="cstat-no" title="statement not covered" >                    option.style.visibility = 'hidden';</span>
-                }
-            });
-<span class="cstat-no" title="statement not covered" >            this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
-                fiftyFifty: prevState.fiftyFifty - 1,
-                usedFiftyFifty: true
-            }));
-        }
-    }
+			let count = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >			do {</span>
+				const randomNumber = <span class="cstat-no" title="statement not covered" >Math.round(Math.random() * 3);</span>
+<span class="cstat-no" title="statement not covered" >				if (randomNumber !== indexOfAnswer) {</span>
+<span class="cstat-no" title="statement not covered" >					if (randomNumbers.length &lt; 2 &amp;&amp; !randomNumbers.includes(randomNumber) &amp;&amp; !randomNumbers.includes(indexOfAnswer)) {</span>
+<span class="cstat-no" title="statement not covered" >						randomNumbers.push(randomNumber);</span>
+<span class="cstat-no" title="statement not covered" >						count ++;</span>
+					} else {
+<span class="cstat-no" title="statement not covered" >						while (true) {</span>
+							const newRandomNumber = <span class="cstat-no" title="statement not covered" >Math.round(Math.random() * 3);</span>
+<span class="cstat-no" title="statement not covered" >							if (!randomNumbers.includes(newRandomNumber) &amp;&amp; newRandomNumber !== indexOfAnswer) {</span>
+<span class="cstat-no" title="statement not covered" >								randomNumbers.push(newRandomNumber);</span>
+<span class="cstat-no" title="statement not covered" >								count ++;</span>
+<span class="cstat-no" title="statement not covered" >								break;</span>
+							}
+						}
+					}
+				}
+			} while (count &lt; 2);
 &nbsp;
-    startTimer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-        const countDownTime = <span class="cstat-no" title="statement not covered" >Date.now() + 180000;</span>
-<span class="cstat-no" title="statement not covered" >        this.interval = setInterval(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-            const now = <span class="cstat-no" title="statement not covered" >new Date();</span>
-            const distance = <span class="cstat-no" title="statement not covered" >countDownTime - now;</span>
+<span class="cstat-no" title="statement not covered" >			options.forEach(<span class="fstat-no" title="function not covered" >(o</span>ption, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				if (randomNumbers.includes(index)) {</span>
+<span class="cstat-no" title="statement not covered" >					option.style.visibility = 'hidden';</span>
+				}
+			});
+<span class="cstat-no" title="statement not covered" >			this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+				fiftyFifty: prevState.fiftyFifty - 1,
+				usedFiftyFifty: true
+			}));
+		}
+	};
 &nbsp;
-            const minutes = <span class="cstat-no" title="statement not covered" >Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));</span>
-            const seconds = <span class="cstat-no" title="statement not covered" >Math.floor((distance % (1000 * 60)) / 1000);</span>
+	startTimer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+		const countDownTime = <span class="cstat-no" title="statement not covered" >Date.now() + 180000;</span>
+<span class="cstat-no" title="statement not covered" >		this.interval = setInterval(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+			const now = <span class="cstat-no" title="statement not covered" >new Date();</span>
+			const distance = <span class="cstat-no" title="statement not covered" >countDownTime - now;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            if (distance &lt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >                clearInterval(this.interval);</span>
-<span class="cstat-no" title="statement not covered" >                this.setState({</span>
-                    time: {
-                        minutes: 0,
-                        seconds: 0
-                    }
-                }, <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >                    this.endGame();</span>
-                });
-            } else {
-<span class="cstat-no" title="statement not covered" >                this.setState({</span>
-                    time: {
-                        minutes,
-                        seconds,
-                        distance
-                    }
-                });
-            }
-        }, 1000);
-    }
+			const minutes = <span class="cstat-no" title="statement not covered" >Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));</span>
+			const seconds = <span class="cstat-no" title="statement not covered" >Math.floor((distance % (1000 * 60)) / 1000);</span>
 &nbsp;
-    handleDisableButton = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.state.previousQuestion === undefined || this.state.currentQuestionIndex === 0) {</span>
-<span class="cstat-no" title="statement not covered" >            this.setState({</span>
-                previousButtonDisabled: true
-            });
-        } else {
-<span class="cstat-no" title="statement not covered" >            this.setState({</span>
-                previousButtonDisabled: false
-            });
-        }
+<span class="cstat-no" title="statement not covered" >			if (distance &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >				clearInterval(this.interval);</span>
+<span class="cstat-no" title="statement not covered" >				this.setState({</span>
+					time: {
+						minutes: 0,
+						seconds: 0
+					}
+				}, <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >					this.endGame();</span>
+				});
+			} else {
+<span class="cstat-no" title="statement not covered" >				this.setState({</span>
+					time: {
+						minutes,
+						seconds,
+						distance
+					}
+				});
+			}
+		}, 1000);
+	};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (this.state.nextQuestion === undefined || this.state.currentQuestionIndex + 1 === this.state.numberOfQuestions) {</span>
-<span class="cstat-no" title="statement not covered" >            this.setState({</span>
-                nextButtonDisabled: true
-            });
-        } else {
-<span class="cstat-no" title="statement not covered" >            this.setState({</span>
-                nextButtonDisabled: false
-            });
-        }
-    }
+	handleDisableButton = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if (this.state.previousQuestion === undefined || this.state.currentQuestionIndex === 0) {</span>
+<span class="cstat-no" title="statement not covered" >			this.setState({</span>
+				previousButtonDisabled: true
+			});
+		} else {
+<span class="cstat-no" title="statement not covered" >			this.setState({</span>
+				previousButtonDisabled: false
+			});
+		}
 &nbsp;
-    endGame = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-        const { state } = <span class="cstat-no" title="statement not covered" >this;</span>
-        const playerStats = <span class="cstat-no" title="statement not covered" >{</span>
-            score: state.score,
-            numberOfQuestions: state.numberOfQuestions,
-            numberOfAnsweredQuestions: state.correctAnswers + state.wrongAnswers,
-            correctAnswers: state.correctAnswers,
-            wrongAnswers: state.wrongAnswers,
-            fiftyFiftyUsed: 2 - state.fiftyFifty,
-            hintsUsed: 5 - state.hints
-        };
-<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            this.props.history.push('/play/quizSummary', playerStats);</span>
-        }, 1000);
-    }
+<span class="cstat-no" title="statement not covered" >		if (this.state.nextQuestion === undefined || this.state.currentQuestionIndex + 1 === this.state.numberOfQuestions) {</span>
+<span class="cstat-no" title="statement not covered" >			this.setState({</span>
+				nextButtonDisabled: true
+			});
+		} else {
+<span class="cstat-no" title="statement not covered" >			this.setState({</span>
+				nextButtonDisabled: false
+			});
+		}
+	};
 &nbsp;
-<span class="fstat-no" title="function not covered" >    re</span>nder () {
-        const { 
-            currentQuestion, 
-            currentQuestionIndex, 
-            fiftyFifty, 
-            hints, 
-            numberOfQuestions,
-            time 
-        } = <span class="cstat-no" title="statement not covered" >this.state;</span>
+	endGame = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+		const { state } = <span class="cstat-no" title="statement not covered" >this;</span>
+		const playerStats = <span class="cstat-no" title="statement not covered" >{</span>
+			score: state.score,
+			numberOfQuestions: state.numberOfQuestions,
+			numberOfAnsweredQuestions: state.correctAnswers + state.wrongAnswers,
+			correctAnswers: state.correctAnswers,
+			wrongAnswers: state.wrongAnswers,
+			fiftyFiftyUsed: 2 - state.fiftyFifty,
+			hintsUsed: 5 - state.hints
+		};
+<span class="cstat-no" title="statement not covered" >		setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >			this.props.history.push('/play/quizSummary', playerStats);</span>
+		}, 1000);
+	};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        return (</span>
-            &lt;Fragment&gt;
-                &lt;Helmet&gt;&lt;title&gt;Quiz Page&lt;/title&gt;&lt;/Helmet&gt;
-                &lt;div className="questions"&gt;
-                    &lt;h2&gt;Quiz Demo&lt;/h2&gt;
-                    &lt;div className="lifeline-container"&gt;
-                        &lt;p&gt;
-                            &lt;span onClick={this.handleFiftyFifty} className="mdi mdi-set-center mdi-24px lifeline-icon"&gt;
-                                &lt;span className="lifeline"&gt;{fiftyFifty}&lt;/span&gt;
-                            &lt;/span&gt;
-                        &lt;/p&gt;
-                        &lt;p&gt;
-                            &lt;span onClick={this.handleHints} className="mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon"&gt;
-                                &lt;span className="lifeline"&gt;{hints}&lt;/span&gt;
-                            &lt;/span&gt;
-                        &lt;/p&gt;
-                    &lt;/div&gt;
-                    &lt;div className="timer-container"&gt;
-                        &lt;p&gt;
-                            &lt;span className="left" style={{ float: 'left' }}&gt;{currentQuestionIndex + 1} of {numberOfQuestions}&lt;/span&gt;
-                            &lt;span className={classnames('right valid', {
-                                'warning': time.distance &lt;= 120000,
-                                'invalid': time.distance &lt; 30000
-                            })}&gt;
-                                {time.minutes}:{time.seconds}
-                            &lt;span  className="mdi mdi-clock-outline mdi-24px"&gt;&lt;/span&gt;&lt;/span&gt;
-                        &lt;/p&gt;
-                    &lt;/div&gt;
-                    &lt;h5&gt;{currentQuestion.question}&lt;/h5&gt;
-                    &lt;div className="options-container"&gt;
-                        &lt;p onClick={this.handleOptionClick} className="option"&gt;{currentQuestion.optionA}&lt;/p&gt;
-                        &lt;p onClick={this.handleOptionClick} className="option"&gt;{currentQuestion.optionB}&lt;/p&gt;
-                    &lt;/div&gt;
-                    &lt;div className="options-container"&gt;
-                        &lt;p onClick={this.handleOptionClick} className="option"&gt;{currentQuestion.optionC}&lt;/p&gt;
-                        &lt;p onClick={this.handleOptionClick} className="option"&gt;{currentQuestion.optionD}&lt;/p&gt;
-                    &lt;/div&gt;
+<span class="fstat-no" title="function not covered" >	re</span>nder () {
+		const {
+			currentQuestion,
+			currentQuestionIndex,
+			fiftyFifty,
+			hints,
+			numberOfQuestions,
+			time
+		} = <span class="cstat-no" title="statement not covered" >this.state;</span>
 &nbsp;
-                    &lt;div className="button-container"&gt;
-                        &lt;button
-                            className={classnames('', {'disable': this.state.previousButtonDisabled})}
-                            id="previous-button"
-                            onClick={this.handleButtonClick}&gt;
+<span class="cstat-no" title="statement not covered" >		return (</span>
+			&lt;Fragment&gt;
+				&lt;Helmet&gt;&lt;title&gt;Quiz Page&lt;/title&gt;&lt;/Helmet&gt;
+				&lt;div className="questions"&gt;
+					&lt;h2&gt;Quiz Demo&lt;/h2&gt;
+					&lt;div className="lifeline-container"&gt;
+						&lt;p&gt;
+							&lt;span onClick={this.handleFiftyFifty} className="mdi mdi-set-center mdi-24px lifeline-icon"&gt;
+								&lt;span className="lifeline"&gt;{fiftyFifty}&lt;/span&gt;
+							&lt;/span&gt;
+						&lt;/p&gt;
+						&lt;p&gt;
+							&lt;span onClick={this.handleHints} className="mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon"&gt;
+								&lt;span className="lifeline"&gt;{hints}&lt;/span&gt;
+							&lt;/span&gt;
+						&lt;/p&gt;
+					&lt;/div&gt;
+					&lt;div className="timer-container"&gt;
+						&lt;p&gt;
+							&lt;span className="left" style={{ float: 'left' }}&gt;{currentQuestionIndex + 1} of {numberOfQuestions}&lt;/span&gt;
+							&lt;span className={classnames('right valid', {
+								'warning': time.distance &lt;= 120000,
+								'invalid': time.distance &lt; 30000
+							})}&gt;
+								{time.minutes}:{time.seconds}
+								&lt;span  className="mdi mdi-clock-outline mdi-24px"&gt;&lt;/span&gt;&lt;/span&gt;
+						&lt;/p&gt;
+					&lt;/div&gt;
+					&lt;h5&gt;{currentQuestion.question}&lt;/h5&gt;
+					&lt;div className="options-container"&gt;
+						&lt;p onClick={this.handleOptionClick} className="option"&gt;{currentQuestion.optionA}&lt;/p&gt;
+						&lt;p onClick={this.handleOptionClick} className="option"&gt;{currentQuestion.optionB}&lt;/p&gt;
+					&lt;/div&gt;
+					&lt;div className="options-container"&gt;
+						&lt;p onClick={this.handleOptionClick} className="option"&gt;{currentQuestion.optionC}&lt;/p&gt;
+						&lt;p onClick={this.handleOptionClick} className="option"&gt;{currentQuestion.optionD}&lt;/p&gt;
+					&lt;/div&gt;
+&nbsp;
+					&lt;div className="button-container"&gt;
+						&lt;button
+							className={classnames('', {'disable': this.state.previousButtonDisabled})}
+							id="previous-button"
+							onClick={this.handleButtonClick}&gt;
                             Previous
-                        &lt;/button&gt;
-                        &lt;button
-                            className={classnames('', {'disable': this.state.nextButtonDisabled})}
-                            id="next-button"
-                            onClick={this.handleButtonClick}&gt;
+						&lt;/button&gt;
+						&lt;button
+							className={classnames('', {'disable': this.state.nextButtonDisabled})}
+							id="next-button"
+							onClick={this.handleButtonClick}&gt;
                                 Next
-                            &lt;/button&gt;
-                        &lt;button id="quit-button" onClick={this.handleButtonClick}&gt;Quit&lt;/button&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/Fragment&gt;
-        );
-    }
+						&lt;/button&gt;
+						&lt;button id="quit-button" onClick={this.handleButtonClick}&gt;Quit&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/Fragment&gt;
+		);
+	}
 }
 &nbsp;
 export default Play;</pre></td></tr></table></pre>
@@ -1237,7 +1237,7 @@ export default Play;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-21T12:15:05.841Z
+                at 2023-03-21T13:12:57.862Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
