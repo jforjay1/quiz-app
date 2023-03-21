@@ -6,7 +6,7 @@ import QuizSummary from '../components/quiz/QuizSummary';
 describe('<QuizSummary />',
     () => {
 
-        it('renders the title "Quiz App"', () => {
+        it('renders the title "Summary"', () => {
             const props = {
                 location: {
                     state: {
@@ -21,7 +21,7 @@ describe('<QuizSummary />',
                 }
             };
             const wrapper = shallow(<QuizSummary {...props} />);
-            const title = <h1>Summary</h1>;
+            const title = 'Summary';
             expect(wrapper.contains(title)).toEqual(true);
         });
 

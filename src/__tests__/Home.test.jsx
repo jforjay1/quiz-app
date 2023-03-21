@@ -1,4 +1,4 @@
-import Home from '../src/components/Home';
+import Home from '../components/Home';
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Link } from 'react-router-dom';

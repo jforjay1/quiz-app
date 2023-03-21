@@ -1,6 +1,6 @@
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {mount} from 'enzyme';
-import App from '../App';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { mount } from 'enzyme';
+import App from './App';
 import Home from '../components/Home';
 import Play from '../components/quiz/Play';
 import QuizSummary from '../components/quiz/QuizSummary';
