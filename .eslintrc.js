@@ -17,7 +17,6 @@ module.exports = {
 		'react'
 	],
 	'rules': {
-		'no-constant-condition' : 0,
 		'indent': [
 			'error',
 			'tab'

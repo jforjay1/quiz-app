@@ -7,10 +7,10 @@
     }
 
     h1 {
+        margin-top: auto;
         color: $green;
         text-align: center;
         font-size: $lg;
-        margin-top: -$sm;
     }
 
     h2 {
@@ -22,7 +22,7 @@
     }
 
     .stats {
-        background-color: $off-white;
+        background-color: $white;
         max-width: 50%;
         padding: $sm $md $md $md;
     }
