@@ -32,6 +32,7 @@ Clone the repository to your local machine.
 ```bash
 git clone https://github.com/jforjay1/quiz-app.git
 ```
+Create a Project in SonarQube. You will find tutorials and documentation on how to create one on the Internet.
 
 - #### Install dependencies:
 
@@ -89,8 +90,16 @@ sonar-scanner \
   -Dsonar.host.url=http://localhost:9000 \
   -Dsonar.login=YOUR_SONARQUBE_TOKEN
 ```
+- ### Analyzing the report
 
-Visit http://localhost:9000 to view the report for your application.
+Visit http://localhost:9000/projects to view the report for your application. Your report should look like below:
+
+<img width="1466" alt="image" src="https://github.com/jforjay1/quiz-app/assets/46365760/cf4fb9c7-bd75-41e0-bc72-72921edda4db">
+
+
+<img width="1465" alt="image" src="https://github.com/jforjay1/quiz-app/assets/46365760/c0c84425-b471-48a6-b420-5b488072c13e">
+
+
 
 - #### Stopping SonarQube
 
