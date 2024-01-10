@@ -1,69 +1,108 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Quiz-App: React Node.js Quiz Application 🚀</h1>
 
-## Available Scripts
 
-In the project directory, you can run:
+### Overview 📖
 
-### `npm start`
+Quiz-App is a dynamic web application built with React and Node.js, featuring 9 engaging questions on current affairs and food and cuisines. The primary focus of this project is to analyze test coverage and identify vulnerabilities using SonarQube, ensuring a robust and secure application.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Key Features 🔑
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- **Engaging Quiz Topics**: Current affairs and food & cuisine-themed questions to test and expand your knowledge.  
+- **SonarQube Integration**: Utilizes SonarQube for thorough test coverage analysis and vulnerability assessments.  
+- **React and JavaScript Framework**: Built with popular and efficient technologies for a seamless user experience.  
 
-### `npm test`
+### Purpose🎯
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Quiz-App is a project that combines fun learning with serious development practices. Dive into a world of trivia while ensuring high standards of code quality and security with SonarQube!
 
-### `npm run build`
+- **Test Coverage Analysis**: Utilizes SonarQube to meticulously analyze test coverage, ensuring that all aspects of the app are thoroughly tested for reliability.
+- **Vulnerability Assessment**: Identifies potential security vulnerabilities within the app, making it a safe and trustworthy platform for users.
+- **Code Quality Monitoring**: Continuously monitors and improves code quality, adhering to best practices in software development.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Getting Started 🌟
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- #### Prerequisites   
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ensure you have npm, node.js and SonarQube installed on your system. If you haven't installed SonarQube head to their official website to download it: https://www.sonarsource.com/products/sonarqube/downloads/
 
-### `npm run eject`
+- #### Installation and Setup 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Clone the repository to your local machine.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/jforjay1/quiz-app.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- #### Install dependencies:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm install react-scripts
+npx install json-server
+```
+- #### Running the Application  
 
-## Learn More
+To Start the app:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In a separate terminal, start the JSON server:
 
-### Code Splitting
+```bash
+npx json-server --watch users.json --port 3003
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## SonarQube Integration 🛡️
 
-### Analyzing the Bundle Size
+- #### Generating SonarQube Token
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+1. Navigate to http://localhost:9000.
+2. Login and go to Accounts > My Account > Security.
+3. Enter a name and generate the SonarQube token.
+4. Generating SonarQube Report
 
-### Making a Progressive Web App
+- #### Start SonarQube:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```bash
+brew services start sonarqube
+```
 
-### Advanced Configuration
+- #### Generate coverage report:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```bash
+npm test -- --coverage
+```
 
-### Deployment
+- #### Generate eslint report:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```bash
+npm run eslint
+```
 
-### `npm run build` fails to minify
+- #### Run SonarQube scanner:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# quiz-app
+```bash
+sonar-scanner \
+  -Dsonar.projectKey=quiz-app \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=YOUR_SONARQUBE_TOKEN
+```
+
+Visit http://localhost:9000 to view the report for your application.
+
+- #### Stopping SonarQube
+
+```bash
+brew services stop sonarqube
+```
+
+## Contributors 🌍
+This project thrives on collaboration and contributions from the community. We are grateful to the following contributors for their invaluable input and dedication:
+
+<a href="https://github.com/jforjay1/quiz-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=jforjay1/quiz-app&anon=0" />
+</a>
+
+Want to contribute? Feel free to submit a pull request or raise an issue. Let's work together to enhance quiz app's learning potential! Together, we can make the habit of using coding best practices an increase the coloration and readability. 🌟👩‍💻👨‍💻🚀 For any questions or suggestions, don't hesitate to reach out or contribute.
