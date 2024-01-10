@@ -1,4 +1,4 @@
-<h1 align="center">Quiz-App: React Node.js Quiz Application 🚀</h1>
+<h1 align="center">Quiz-App🚀</h1>
 
 
 ### Overview 📖
